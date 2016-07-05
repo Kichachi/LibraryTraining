@@ -8,10 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
-@NamedQueries({
-		@NamedQuery(name = Book.GET_BOOKS, query = "SELECT Book FROM Book book where book.language = :language") })
+@NamedQueries({ @NamedQuery(name = Book.GET_BOOKS, query = "SELECT Book FROM Book book ") })
+// where book.language = :language
 public class Book {
 
 	private static final String PREFIX = "library.business.book.entity.";
@@ -21,6 +23,8 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Size(min = 5)
+	@NotNull
 	private String title;
 	private String isbn;
 	private String author;

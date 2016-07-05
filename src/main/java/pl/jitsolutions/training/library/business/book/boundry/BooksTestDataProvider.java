@@ -42,7 +42,8 @@ public class BooksTestDataProvider {
 		book1.setBookstand(14);
 		book1.setShelf(1);
 		book1.setQuantity(3);
-		book.setLanguage(Language.POLAND);
+		book1.setLanguage(Language.POLAND);
+		entityManager.persist(book1);
 		Book book2 = new Book();
 		book2.setTitle("Gra o Tron");
 		book2.setAuthor("George RR Martin");
@@ -52,8 +53,8 @@ public class BooksTestDataProvider {
 		book2.setBookstand(12);
 		book2.setShelf(4);
 		book2.setQuantity(14);
-		book.setLanguage(Language.GERMANY);
-		entityManager.persist(book1);
+		book2.setLanguage(Language.GERMANY);
+		entityManager.persist(book2);
 
 	}
 

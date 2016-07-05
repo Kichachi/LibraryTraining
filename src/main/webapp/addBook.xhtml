@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+	<h:form>
+		<p:panelGrid colums="3">
+			<h:outputLabel value="Autor" for="author"/>
+			<p:inputText id="author" value="#{addBookModel.book.author}"/>
+			<p:message for="author" />			
+			
+			<h:outputLabel value="Tytul" for="title"/>
+			<p:inputText id="title" value="#{addBookModel.book.title}"/>
+			<p:message for="title" />
+						
+			<h:outputLabel value="Data wydania" for ="releaseDate"/>
+			<p:calendar id="releaseDate" value="#{addBookModel.book.releaseDate}"/>
+			<p:message for="releaseDate"/>
+		</p:panelGrid>
+		
+		<h:panelGroup>
+			<p:commandButton value="Zapisz" process="" ajax="" update="@form" action="{addBookPresenter.save}"/>
+		</h:panelGroup>
+	</h:form>
+</body> 
+</html>

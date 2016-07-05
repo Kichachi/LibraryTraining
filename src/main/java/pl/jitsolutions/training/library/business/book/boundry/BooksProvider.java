@@ -1,6 +1,5 @@
 package pl.jitsolutions.training.library.business.book.boundry;
 
-import java.util.Collections;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -11,7 +10,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import pl.jitsolutions.training.library.business.book.entity.Book;
-import pl.jitsolutions.training.library.business.book.entity.Language;
 
 @Stateless
 public class BooksProvider {
@@ -21,8 +19,8 @@ public class BooksProvider {
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public List<Book> getBooks() {
 		TypedQuery<Book> query = entityManager.createNamedQuery(Book.GET_BOOKS, Book.class);
-		query.setParameter("language", Language.POLAND);
+		// query.setParameter("language", Language.POLAND);
 
-		return Collections.emptyList();
+		return query.getResultList();
 	}
 }

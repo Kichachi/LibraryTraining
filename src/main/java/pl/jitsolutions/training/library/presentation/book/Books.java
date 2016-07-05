@@ -20,7 +20,6 @@ public class Books {
 	@PostConstruct
 	public void init() {
 		books = booksProvider.getBooks();
-
 	}
 
 	public List<Book> getBooks() {
