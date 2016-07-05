@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = Book.GET_BOOKS, query = "SELECT book FROM Book book where book.language = :language") })
+		@NamedQuery(name = Book.GET_BOOKS, query = "SELECT Book FROM Book book where book.language = :language") })
 public class Book {
 
 	private static final String PREFIX = "library.business.book.entity.";
@@ -28,7 +28,15 @@ public class Book {
 	private int bookstand;
 	private int shelf;
 	private int quantity;
-	private Country country;
+	private Language language;
+
+	public Language getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(Language language) {
+		this.language = language;
+	}
 
 	public String getTitle() {
 		return title;
@@ -92,14 +100,6 @@ public class Book {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Country getCountry() {
-		return country;
-	}
-
-	public void setCountry(Country country) {
-		this.country = country;
 	}
 
 }

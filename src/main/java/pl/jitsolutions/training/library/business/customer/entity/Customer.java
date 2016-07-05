@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import pl.jitsolutions.training.library.business.book.entity.Country;
+import pl.jitsolutions.training.library.business.book.entity.Language;
 
 @Entity
 public class Customer {
@@ -18,13 +18,13 @@ public class Customer {
 	private String surname;
 	private Date birthDate;
 	int rentedBooks;
-	private Country country;
+	private Language country;
 
-	public Country getCountry() {
+	public Language getCountry() {
 		return country;
 	}
 
-	public void setCountry(Country country) {
+	public void setCountry(Language country) {
 		this.country = country;
 	}
 

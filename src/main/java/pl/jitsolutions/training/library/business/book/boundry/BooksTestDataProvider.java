@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import pl.jitsolutions.training.library.business.book.entity.Book;
-import pl.jitsolutions.training.library.business.book.entity.Country;
+import pl.jitsolutions.training.library.business.book.entity.Language;
 
 @Singleton
 @Startup
@@ -30,7 +30,7 @@ public class BooksTestDataProvider {
 		book.setBookstand(10);
 		book.setShelf(15);
 		book.setQuantity(10);
-		book.setCountry(Country.POLAND);
+		book.setLanguage(Language.POLAND);
 		entityManager.persist(book);
 		Book book1 = new Book();
 		book1.setTitle("Gra o Tron");
@@ -42,7 +42,7 @@ public class BooksTestDataProvider {
 		book1.setBookstand(14);
 		book1.setShelf(1);
 		book1.setQuantity(3);
-		book.setCountry(Country.POLAND);
+		book.setLanguage(Language.POLAND);
 		Book book2 = new Book();
 		book2.setTitle("Gra o Tron");
 		book2.setAuthor("George RR Martin");
@@ -52,7 +52,7 @@ public class BooksTestDataProvider {
 		book2.setBookstand(12);
 		book2.setShelf(4);
 		book2.setQuantity(14);
-		book.setCountry(Country.GERMANY);
+		book.setLanguage(Language.GERMANY);
 		entityManager.persist(book1);
 
 	}
